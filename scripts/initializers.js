@@ -1,3 +1,6 @@
+var ball;
+var paddle = [];
+
 function init() {
   ctx = $('#canvas')[0].getContext("2d");
   WIDTH = $("#canvas").width();
@@ -11,39 +14,21 @@ function init() {
   return setInterval(draw, render_delay);
 }
 
-function init_trail() {
-  
-}
-
 function init_field_lines() {
   field_lines = [WIDTH / 4, (WIDTH / 4) * 3];
 }
 
 function init_ball(player_no) {
-  ballx = player_no == 0 ? 0 + ballw : WIDTH - paddlew - ballw;
-  bally = HEIGHT / 2 - ballh / 2;
-  dx = 0;
-  dy = 0;
-
-  reset_trail();
+  ball = new Ball(player_no == 0 ? 0 + 20 : WIDTH - paddle[0].width - 20, HEIGHT / 2 - 20 / 2);
+  ball.reset_trail();
 }
 
 function init_paddle() {
-  paddleh = 100;
-  paddlew = 20;
-
-  paddlex[0] = 0;
-  paddley[0] = HEIGHT / 2 - paddleh / 2;
-  paddlex[1] = WIDTH - paddlew;
-  paddley[1] = paddley[0];
+  paddle[0] = new Paddle(0, HEIGHT / 2 - 100 / 2, 100, 20);
+  paddle[1] = new Paddle(WIDTH - 20, paddle[0].y, 100, 20);
 }
 
 function init_score() {
   scores[0] = 0;
   scores[1] = 0;
-}
-
-function reset_trail() {
-  trailx = ballx + ballr;
-  traily = bally + ballr;
 }
