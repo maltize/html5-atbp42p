@@ -165,22 +165,29 @@ function draw() {
   }
 
   print_score();
+  print_instruction();
 }
 
 function print_score() {
-  text(WIDTH / 2 - 20, HEIGHT / 2, scores[0], "middle");
-  text(WIDTH / 2, HEIGHT / 2, ":", "middle");
-  text(WIDTH / 2 + 20, HEIGHT / 2, scores[1], "middle");
+  text(WIDTH / 2 - 20, HEIGHT / 2, scores[0], "middle", 20);
+  text(WIDTH / 2, HEIGHT / 2, ":", "middle", 20);
+  text(WIDTH / 2 + 20, HEIGHT / 2, scores[1], "middle", 20);
+}
+
+function print_instruction() {
+  if (HEIGHT <= 300) {
+    text(WIDTH / 2, HEIGHT - 10, "A - up  Z - down  X - shot", "middle", 8);
+  }
 }
 
 function debug() {
-  text(WIDTH / 2, 0, "Ball", "top");
-  text(WIDTH / 2, 15, "x " + (ball.x + ball.radius) + " y " + (ball.y + ball.radius), "top");
-  text(WIDTH / 2, 30, "dx " + ball.dx + " dy " + ball.dy, "top");
-  text(WIDTH / 2, 45, "active_player: " + active_player, "top");
-  text(WIDTH / 2, 60, "is_ball_moving: " + is_ball_moving(), "top");
-  text(WIDTH / 2, 75, "is_ball_on_field: " + is_ball_on_field(), "top");
-  text(WIDTH / 2, 90, "last_phase: " + last_phase, "top");
-  text(WIDTH / 2, 105, "phase: " + phase, "top");
-  text(WIDTH / 2, 120, "spacePressed: " + spacePressed, "top");
+  text(WIDTH / 2, 0, "Ball", "top", 20);
+  text(WIDTH / 2, 15, "x " + (ball.x + ball.radius) + " y " + (ball.y + ball.radius), "top", 20);
+  text(WIDTH / 2, 30, "dx " + ball.dx + " dy " + ball.dy, "top", 20);
+  text(WIDTH / 2, 45, "active_player: " + active_player, "top", 20);
+  text(WIDTH / 2, 60, "is_ball_moving: " + is_ball_moving(), "top", 20);
+  text(WIDTH / 2, 75, "is_ball_on_field: " + is_ball_on_field(), "top", 20);
+  text(WIDTH / 2, 90, "last_phase: " + last_phase, "top", 20);
+  text(WIDTH / 2, 105, "phase: " + phase, "top", 20);
+  text(WIDTH / 2, 120, "spacePressed: " + spacePressed, "top", 20);
 }

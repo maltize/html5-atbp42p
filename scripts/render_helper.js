@@ -31,8 +31,8 @@ function line(sx,sy,ex,ey) {
   ctx.stroke();
 }
 
-function text(x,y,text,baseline) {
-  ctx.font = "bold 20px sans-serif";
+function text(x,y,text,baseline,size) {
+  ctx.font = "bold " + size + "px sans-serif";
   ctx.textAlign = "center";
   ctx.textBaseline = baseline;
   ctx.fillText(text,x,y);
