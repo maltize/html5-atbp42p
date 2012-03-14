@@ -46,12 +46,12 @@ function Paddle(x, y, height, width){
       if (phase == 0 && this.y + this.height <= ball.y + ball.radius)
         return;
       if (this.y > 0)
-        this.y -= 5;
+        this.y -= 2;
     } else if (downDown) {
       if (phase == 0 && this.y >= ball.y + ball.height - ball.radius)
         return;
       if (this.y + this.height < HEIGHT)
-        this.y += 5;
+        this.y += 2;
     }
   }
 
