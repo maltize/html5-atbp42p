@@ -25,6 +25,11 @@ function next_level(player_no) {
 }
 
 function draw_field() {
+  line(0, 0, WIDTH, 0);
+  line(0, HEIGHT, WIDTH, HEIGHT);
+  line(0, 0, 0, HEIGHT);
+  line(WIDTH, 0, WIDTH, HEIGHT);
+
   rect(field_lines[0], 0, 1, HEIGHT);
   rect(field_lines[1], 0, 1, HEIGHT);
 }
@@ -57,7 +62,7 @@ function ready_to_continue() {
 }
 
 function update_paddle_height() {
-  if (paddle[active_player].height > 10)
+  if (HEIGHT > 100 && paddle[active_player].height > 10)
     paddle[active_player].height -= 10;
 }
 

@@ -1,11 +1,11 @@
-function Ball(x, y){
+function Ball(x, y, height, width, radius){
   this.x = x;
   this.y = y;
   this.dx = 0;
   this.dy = 0;
-  this.height = 20;
-  this.width = 20;
-  this.radius = 10;
+  this.height = height;
+  this.width = width;
+  this.radius = radius;
   this.trailx;
   this.traily;
 
